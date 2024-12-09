@@ -116,6 +116,142 @@ After Saving it looks like this:
 
 
 
+let us Continue with the next Tool:
+
+The Map Drawer
+![mapdrawer_1](https://github.com/user-attachments/assets/ed161e36-04b1-47bf-972a-6572e7e7a84f)
+
+The Tool starts with a blank white screen and 3 Buttons:
+
+Toggle Coordiantes:
+- After laoding the json file which we created before we can hide or displaythe coordiantes for a better overview
+
+  
+Load JSON from File:
+- Loading your created json filefrom before
+
+Save JSON to FIle
+- Saves the File back also into a JSON when we modfiy here Clusters
+
+
+let us continue by uploading the JSON File
+
+I tlooks liek this first of all:
+
+![mapdrawer_2](https://github.com/user-attachments/assets/fd2ed163-1d2b-4444-91d3-f90d7946c8c9)
+
+
+Controls for the Map Drawer:
+
+- Scroll Wheel for zoom
+- Middle Mouse Button hold for dragging the camera
+
+Let us Zoom in:
+
+![mapdrawer_3](https://github.com/user-attachments/assets/669cce7a-d439-4c44-9ef1-f90d42785a42)
+
+As you can see the Clusters are now displayed with the Numbers and conenctions using the green lines between them, corresponding to this you see also the coordiantes which you can toggle on or off using the button.
+
+Now we wanna move a sector here for people like me who need a graphically overview instead of modifiying endless numbers in XML files directly.
+
+
+The Little ofsetted Box above the "Toggle Coordiantes" is a textbox. (Dont know why it is ofsettet currently... )
+
+Here you can enter the "EXACT" CLuster Number and confirm afterwards with "Enter" todrag and drop thecluster to a new postion.
+To Drop a cluster, use the right mousebutton on the new postion.
+
+The coorinates getting updated directly. But keep in mind that you need to stay in the "originally grod" pattern. Otehrwise your new Cluster will be dispalyed in game with an offset.
+
+
+Let us Move Cluster 28 (Most left cluster on the screen) .... far ... far... away more to the left.
+
+![mapdrawer_4](https://github.com/user-attachments/assets/c5e787c7-4fa4-4499-9e06-1c69bf736bb6)
+
+As youcan see, we moved sucessfully the cluster to a new position and the coordiantes are updated directly.
+
+Currently Bug: The Textbox sometimes makes the inserted text invisible when you enter a new Cluster Number.... technically its still working... its jsut a visually glitch somewhere in thepygame-library renderer... .
+
+
+Let us now save the new galaxy as jsonfile Using the corresponding button.
+
+The new json file looks exactly thes ame like which you loaded, but the difference is obvious: The Moved CLusters have now new postions.
+
+
+
+Last tool the json to XML converter
+
+
+This is a super simple nearly 100 lines tool where you basically load your modified json file in it and save it back as a specific overwrite galaxy.xml which you can use for your mod
+![xml creater](https://github.com/user-attachments/assets/19cdee91-dcf4-487e-bd68-b01c6d9979a9)
+
+
+After savingthe json back to an xml it looks like this:
+
+![xml replacer](https://github.com/user-attachments/assets/b2fa6cc8-a33b-405c-b004-babdb8134751)
+
+As yo ucan see creator creates a xml file using a "replace sel" to point to thecorrect Cluster name and offset the postions. It shows every loaded CLuster, even when you never touched them in themap drawer.
+Thsi decision i made ebcause otehrwise anaddional check up if the loaded coordinates differs from the modified. Thegame itself does ntocare about it if he same coordinates are used for replacement even when they are thesame... the basically "move... but do not move" ... you knwo what I mean.
+
+
+
+
+Afterwards you can go back in the First tool.
+
+To uplaoded the overwrite xml which basically uses your modificated positions.
+
+
+
+And thats it. The rest is simple for modders:
+
+Create a content.xml file use your new repalcement "galaxy.xml" for it. and move free ley any cluster.
+
+
+
+
+
+Addional Notes WHich are very importannt
+
+
+Currently "Supported" Mods which can be laoded using the galaxy.xml files:
+
+- X Universe +/ as of 7.0  --> nearly 99% suported --> I think I catched all the connectiongates because they are well strucurized J.L made a very good mod becuase he started something around with 4xx as cluster numbers... there is enough "space" between original and modded"
+- Add More Sectors 80% Supported... same issue here... More complex... because the mooder used always different prefixes...and capital... lower letters... which makes the identifation of all this "Non-Conform structure"... nearly impossible to get all the gae connections. (Hoenstly dude. I like you mod but...why????)
+- Sector: The Deep --> As far As I see its jsut normally loaded
+- Farnhams Legend. sadly same situation... the prefix is a UUID Number.... and honestly jsut for this one I do not write an own logic... just for dispalxing the gate... .
+
+
+For all modders:
+
+I will more or less not add any exception logic.
+
+Which means... If you name your CLuster like "Mysupercrazypower_cLuster09"
+
+like from Add more sectors:
+
+![sectos dont](https://github.com/user-attachments/assets/280ec4d8-52de-4a63-9e41-0a0ef11239e0)
+
+I will not make extra logics only do recongize your "custom prefx" I did this for Add more sectors but only becuase this mod and the mod X Universe + add a lot of nice clusters to thegame, where 6 of them overlapped and they also created a "spagehtti-verse"
+
+
+
+Thats it, and to prove that my  galaxy is looking totally different now from yours here an example how my galaxy is currently looking:
+
+
+![galaxy prove1](https://github.com/user-attachments/assets/db0b8495-2168-4de7-81a1-08fd3bd254e5)
+![galaxy prove2](https://github.com/user-attachments/assets/6f7660e9-066e-4042-8a87-e17f83890562)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
